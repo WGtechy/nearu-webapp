@@ -1,0 +1,27 @@
+@import "../../base";
+
+.footer {
+  display: none
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .profile__img {
+    @include profileImage(0)
+  }
+  .footer__icons {
+    // display: 0.15;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    overflow-x: auto;
+    justify-content: space-around;
+    align-items: center;
+    // padding: 5px 0
+    &__basket {
+      padding: 5px;
+      border-radius: 50%;
+    }
+  }
+} ;

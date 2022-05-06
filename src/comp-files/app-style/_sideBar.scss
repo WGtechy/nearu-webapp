@@ -1,0 +1,142 @@
+@import "../../base";
+
+
+.sidebar{
+    display:flex;
+    flex-direction: column;
+    width: 4rem;
+    height: 100vh;
+    padding: 2rem 0 5rem 0;
+    position: fixed;
+    overflow: scroll;
+    z-index: 3;
+    box-shadow: -2px 3px 7px;
+    transition: transform .4s ease-in-out;
+   
+    
+
+    hr {
+        height: 3px;
+    }
+    li {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0.6rem 0.5rem;
+        margin: 0.2rem 0;
+        cursor: pointer;
+
+        .li__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            align-items: center;
+        }
+
+        small {
+            display: flex;
+            font-size: .6rem;
+        }
+
+    
+    }
+
+ 
+    &.close__sidebar {
+       
+        width: 4rem; 
+        transform: translateX(-120%);
+        
+        hr {
+            height: 3px;
+        }
+
+        li {
+            align-items: center;
+
+            .li__list {
+                justify-content: space-around;
+            }
+        
+            div {
+                align-items: center;
+            }           
+           
+            span {
+                display: none;
+            }
+
+            small {
+                display: flex;
+                font-size: .6rem;
+            }
+
+        
+        }
+
+       
+        
+    }
+}
+
+//   .li__list {
+//                 display: flex;
+//                 flex-direction: row;
+               
+//             } 
+
+// .nav__dropdown {
+//     display: none;
+
+//     &open {
+//         display: block;
+//         overflow:hidden;
+//         // max-height: 21px;
+//         transition: 0.4s ease-in-out;
+//     }            
+
+//     .nav__dropdown__icon {
+//         display: none;
+//     }
+// }
+
+// @media screen and (max-width: $breakpoint-medium) {
+//     .sidebar  {
+//         width: 50px;
+
+
+//         hr {
+//             height: 3px;
+//         }
+        
+//         li {
+//             justify-content: center;
+//             span {
+//                 display: none;
+//             }
+//         }
+//         &.open {
+//             width: 250px;
+
+
+//             hr {
+//                 height: 3px;
+//             }
+//             li {
+//                 display: flex;
+//                 justify-content: flex-start;        
+//                 span {
+//                     display: flex;
+//                 }
+//             }
+//         }
+        
+//     }
+// }
+
+@media screen and (max-width: $breakpoint-small) {
+    .sidebar {
+        display: none
+    }
+}

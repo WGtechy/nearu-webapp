@@ -1,0 +1,141 @@
+@import url("https:/fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+// dark color theme
+$dark-text-color: #b1bdb4;
+$dark-background-primary: #16181b;
+$dark-background-secondary: #121417;
+$dark-border-color: #4c4c4c;
+
+
+
+// ligt color theme
+$light-text-color: #16181b;
+$light-background-primary: #ffffff;
+$light-background-secondary:#e7e7e7;
+$light-border-color: #e3e3e3;
+
+
+$breakpoint-medium: 1224px;
+$breakpoint-low-medium: 710px;
+$breakpoint-small: 520px;
+$breakpoint-xtra-small: 350px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// dark theme
+body {
+    // background-color: $dark-background-primary;
+    background-attachment: fixed;
+    margin: 50px 0;
+    font-size: .9rem;
+    // color: $dark-text-color;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1px;
+}
+
+
+
+
+
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  @mixin line-clamp($number) {
+    overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: $number;
+        -webkit-box-orient: vertical;    
+  }
+
+  @mixin  heading($width) {
+    width: $width;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    // margin-bottom: 5px;
+    position: fixed;    
+    top: 0;
+    left: 0;
+     right: 0;     
+  }
+
+  @mixin video {
+    margin-bottom: 1rem;
+    padding: 0.7rem 0;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  @mixin sideBarContent($width) {
+    
+    margin-top: 2.5rem;
+    padding: 0rem;
+    width:  $width;
+    position: fixed;
+    padding-bottom: 4rem;
+    min-height: 100vh;
+  }
+
+  .follow__button {
+    color: white;
+    background: red;
+    box-shadow: 1px 1px 0 1px #e3e3e3;
+    padding: 0.2em 0.4em;
+    border-radius: 13px;
+    
+  }
+  @mixin profileDetails($fontSize) {
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: $fontSize;
+  }
+
+  @mixin profileImage($marginLeft) {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-left: $marginLeft;
+    cursor: pointer;
+
+  }
+
+  @mixin productImage($width, $margin, $borderRadius) {
+    margin: $margin;
+    width: $width;
+    object-fit: contain;
+    border-radius: $borderRadius;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 5px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .row>* {
+    width: 50%;     
+    }
+  }
+
+@media screen and (max-width: $breakpoint-small)  {
+  .row>* {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-xtra-small) {
+  .row>* {
+    width: 100%;
+  }
+}

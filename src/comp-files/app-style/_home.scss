@@ -1,0 +1,53 @@
+@import "../../base";
+
+.content__area {
+    transform: translateX(0%);   
+    max-width:100%;
+// margin: 0 3rem;   
+
+ &.close {
+    max-width: calc(100% - 4rem);
+    margin-left: 3rem;
+    z-index: 1;
+    transition: transform 0.1s ease-in;
+    position: fixed;
+
+                
+    }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+    .content__area  {
+       
+
+        transform: translateX(0%);
+        transition: 0.4s ease-in-out;       
+
+        &.close {
+        transform: translateX(1%); 
+        max-width: calc(100% - 4rem);
+        z-index: 1;
+        transition: transform 0.1s ease-in;
+        margin-left: 3rem;
+        position: fixed;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+    .content__area {
+        // transform: translateX(-10%);
+        // margin-left: 45px;
+        max-width: 100%;
+
+        &.close {
+            transform: translateX(0);
+            margin: auto;
+            max-width: 100%;
+            position: fixed;
+        }
+    }
+
+    
+
+}

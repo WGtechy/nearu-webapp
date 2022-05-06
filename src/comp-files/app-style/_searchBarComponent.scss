@@ -1,0 +1,31 @@
+.search__bar {
+  display: flex;
+  flex: 0.6;
+  padding: 0.1rem;
+  margin: 0.1rem;
+  border-radius: 3px;
+  // border: 1.2px solid;
+  border-radius: 8px;
+
+  input {
+    width: 100%;
+    border: none;
+    font-weight: 500;
+    padding: 0.3rem;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    border: none;
+    padding: 0 0.2rem;
+    background: transparent;
+    outline: none;
+    &:focus{
+        border: none
+    }
+  }
+}
