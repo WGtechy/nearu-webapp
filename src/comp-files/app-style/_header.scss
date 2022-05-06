@@ -1,0 +1,94 @@
+@import "../../base.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  &__left {
+    display: contents;
+    justify-content: space-between;
+    align-items: center;
+
+    
+
+    &__logo {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__icons {
+    display: 0.15;
+    display: contents;
+    justify-content: space-around;
+    align-items: center;
+
+    &__img {
+      @include profileImage(5px);
+    }
+
+    &__more {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .header {
+    padding: 1rem;
+    box-shadow: 1px -7px 2px 7px;
+    form {
+      flex: 1;
+    }
+    &__left {
+      display: 0.15;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+       &__menu {
+       display: none !important;
+     }
+    }
+
+    &__icons {
+      display: 0.15;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__more {
+        display: block;
+      }
+
+      &__home,
+      &__search,
+      &__message,
+      &__gift,
+      &__img,
+      &__basket {
+        display: none;
+      }
+    }
+  }
+
+  .search__bar {
+    display: none !important;
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-medium) {
+ .header__left__menu {
+   display: block;
+ } 
+}

@@ -1,0 +1,55 @@
+@import "../../base";
+
+.video {
+    margin-bottom: 1rem;
+    padding: 0.7rem 0;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    &__top {
+        margin-bottom: 0.5rem;
+        position: relative;
+        img {
+            width: 100%;
+        }
+
+        span {
+            position: absolute;
+
+            bottom: 0.3rem;
+            right: 0.3rem;
+            padding: 0.2rem;
+            background: black;
+            border-radius: 3px
+        }
+    }
+
+    &__title {
+        margin-bottom: 0.1rem;
+        @include line-clamp(2)
+    }
+
+    &__details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    &__channel {
+        @include profileDetails(1rem);
+
+        img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            cursor: pointer;
+            object-fit: fill;
+        }
+        p {
+            margin-bottom: 0;
+
+        }
+    }
+}

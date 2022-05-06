@@ -1,0 +1,139 @@
+@import "../../base";
+
+.sellers__canvas {
+  display: flex;
+  width: 36%;
+  transform: translateX(150%);
+  transition: transform 0.4s ease-in;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 4px;
+  overflow: scroll;
+  z-index: 5;
+  border-left: 1px solid white;
+
+
+  &.open {
+    z-index: 7;
+    transform: translateX(0);
+    transition: transform 0.9s ease-in;   
+  }
+
+  .contain {
+    @include sideBarContent(100%);
+
+    &__heading .heading__bar{
+      @include heading(100%)
+    }
+
+    &__heading {
+    
+      &__location {
+       margin: 5px 0;   
+      }
+      h3 {
+        font-size: 1rem;
+
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &__content {
+      margin: 0.1rem 0;
+      padding: .3rem .5rem;
+      &__profile {
+        @include profileDetails(0.9rem);
+        position: relative;
+
+        img {
+          @include profileImage(5px);
+          margin-left: 10px;
+        }
+        span {
+          margin: 0 5px
+        }
+        &__information {
+          position: absolute;
+          right: 0;
+
+        }
+      }
+
+      &__product {
+        // height: 100px;
+        .image__contain {
+          display: flex;
+          flex-direction: row;
+          overflow-y: hidden;
+          padding-right: 3px;
+          padding: 5px;
+
+          img {
+            @include productImage(30%, 0 10px, 10px);
+          }
+        }        
+        span {
+          @include line-clamp(2);
+          font-size: 0.8rem;
+        }
+
+        .product__price {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          div {
+            display: flex;
+            align-items: center;
+            margin-right: 5px;
+            padding: 0.1rem .3rem;
+            font-size: 0.7rem;
+            background: #e3e3e3;
+            box-shadow: 1px 2px 5px 1px #fff;
+            .currency{
+              font-size: 1.3rem;
+              font-weight: 600;
+              color: #ff0000;
+            };
+            .figure {
+              font-size: 1rem;
+              font-weight: 600;
+              margin-right: 5px;
+            }
+          }
+        }
+
+        &__icons {
+          display: flex;
+          justify-content: space-between;
+          
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            span {
+              font-size: 0.6rem;
+            }
+          }
+        }
+
+
+      }
+
+    }
+  }
+}
+
+
+
+@media screen and (max-width: $breakpoint-small) {
+  .sellers__canvas {
+    display: block;
+    width: 70%
+  }
+}

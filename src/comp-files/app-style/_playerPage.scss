@@ -1,0 +1,279 @@
+@import "../../base";
+
+.video__canvas {
+  position: fixed;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: transform 0.9s ease-out;
+  height: 100vh;
+  top: 0;
+  overflow-x: hidden;
+  z-index: 4;
+
+  &.open {
+    transform: translateX(0);
+    transition: transform 0.9s ease-out;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__left__content {
+ 
+    @include sideBarContent(65%);
+  
+    &__header {
+      @include heading(100%);
+    }
+  
+    &__body {
+      margin: 10px 0;
+  
+      &__profile {
+        @include profileDetails(0.9rem);
+  
+        img {
+          @include profileImage(5px);
+          
+        }
+      }
+    }
+  
+    &__video__icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  
+      // &__target {
+      //   padding: 0 1rem;
+      // }
+  
+      &__left, &__right, &__center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+        margin-bottom: 0.5rem;
+        
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+  
+          span {
+            font-size: 0.6rem;
+          }
+        }
+  
+      }
+  
+      &__center {
+        justify-content: space-around!important;
+      }
+    }
+  
+    &__video__container {
+      padding: 0 0.7rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+     
+  
+      &__video {
+          margin-bottom: 0.5rem;
+          position: relative;
+          img {
+              width: 100%;
+              height: 50%;
+              object-fit: contain;
+              margin-top: 0.5rem;
+          }
+      }
+    }
+  }
+  
+ &__close {
+    height: 100vh;
+    width: 35%;
+  }
+  
+  &__right__content {
+    &.close {
+      transform: translateX(100%);
+      z-index: 6;
+    }
+    @include sideBarContent(35%);
+    transition: transform 0.4s ease-out;
+    z-index: 8;
+    right: 0;
+      .video {
+        @include video;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.7rem 0.5rem!important;
+    
+      &__top {
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+        position: relative;
+        width: 100%;
+        
+        img {
+            width: 100%;
+        }
+
+        span {
+            position: absolute;
+
+            bottom: 0.3rem;
+            right: 0.3rem;
+            padding: 0.2rem;
+            background: black;
+            border-radius: 3px
+        }
+      }
+      &__right__sidebar {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__title {
+          margin-bottom: 0.1rem;
+          @include line-clamp(2);
+          font-size: 12px;
+        }
+        &__details {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        
+          .views__comments, .time__follow {
+              display: flex;
+              align-items: flex-start;
+              flex-direction: row;
+              justify-content: space-between;
+              span {
+                margin-right: 1rem;
+              }
+              }
+          .time__follow {
+            margin-top: 5px;
+            align-items:baseline;           
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobileView {
+  display: none;
+}
+
+
+
+@media screen and (max-width:$breakpoint-medium) {
+    .video__canvas__right__content .video {
+      margin: 1rem 0;
+      flex-direction: column;
+  }
+}
+
+@media screen and (max-width: $breakpoint-low-medium) {
+  .video__canvas__left__content__video__icons__left div span, .video__canvas__left__content__video__icons__right div span, .video__canvas__left__content__video__icons__center div span {
+    display: none;
+  }
+  
+}
+
+
+ @media screen and (max-width: $breakpoint-small) {
+
+  .video__canvas {
+    &.open {
+     flex-direction: column;
+    }
+    &__left__content {
+      width: 100%;   
+        &__video__icons__left, &__video__icons__right, &__video__icons__center {
+        div {
+          span {
+            display: none;
+          } 
+        }
+      }
+    }
+    &__right__content {
+     display: none
+     
+    }
+  } 
+
+  .video__canvas__right__content {
+    display: none
+}
+
+  .mobileView {
+    @include sideBarContent(100%);
+    display: flex;
+    margin-top: 2.5rem !important;
+    padding: 0rem 1rem;
+    position: relative; 
+    min-height: fit-content;
+    overflow: scroll;
+    .video {
+      @include video;
+      display: flex;
+      flex-direction: row;
+      // justify-content: space-around;
+      // padding: 0.7rem 0.5rem!important;
+
+      &__top {
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+        position: relative;
+        width: 100%; 
+
+        img {
+          width: 100%
+        }
+       
+      }
+    }
+  }
+
+    .mobile__suggestion {
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+  // Check top
+        &__description {
+        margin-bottom: 0.1rem;
+        @include line-clamp(3)
+      // Check top
+    }
+    &__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // Check top
+      .views__comments, .time__follow {
+   
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+    
+        span {
+          margin-right: 1rem;
+        }
+        }
+    }
+  }
+  
+ 
+.time__follow {
+  margin-top: 5px;
+ 
+}
+ }
