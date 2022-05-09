@@ -11,7 +11,7 @@ const sellers = [
       ],
       productCount: 400,
     },
-
+ 
     {
       image: "profile.jpg",
       username: "Kayode Godwin",
